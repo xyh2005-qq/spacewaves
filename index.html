@@ -77,31 +77,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .game-container {
-            width: 100%;
-            height: 600px;
-            background: #172a45;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .game-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .game-container::before {
-            content: "Loading game...";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #64ffda;
-            font-size: 1.2rem;
-        }
-
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -219,6 +194,65 @@
                 gap: 1rem;
             }
         }
+
+        .game-preview {
+            width: 100%;
+            height: 600px;
+            background: #172a45;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .play-button {
+            position: absolute;
+            padding: 1rem 3rem;
+            background: #64ffda;
+            color: #0a192f;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .game-preview:hover .game-image {
+            transform: scale(1.05);
+            filter: brightness(0.7);
+        }
+
+        .game-container {
+            width: 100%;
+            height: 600px;
+            background: #172a45;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -240,13 +274,13 @@
     <main>
         <section id="game" class="container">
             <h1>Play Space Waves</h1>
-            <div class="game-container">
+            <div id="game-container" class="game-container">
                 <iframe 
-                    src="https://games.crazygames.com/en_US/space-waves" 
-                    title="Space Waves"
-                    allow="fullscreen"
-                    scrolling="no"
-                    frameborder="0"
+                    src="https://www.crazygames.com/embed/space-waves" 
+                    style="width: 100%; height: 100%;" 
+                    frameborder="0" 
+                    allow="gamepad *;"
+                    title="Space Waves Game"
                     loading="lazy">
                 </iframe>
             </div>
@@ -335,7 +369,7 @@
                 <a href="/terms">Terms of Service</a>
             </div>
             <div class="footer-copyright">
-                <p>&copy; 2024 Space Waves. All rights reserved.</p>
+                <p>&copy; 2025 Space Waves. All rights reserved.</p>
             </div>
         </div>
     </footer>
