@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Space Waves</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a192f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #172a45;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #64ffda;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo-text {
+            letter-spacing: 1px;
+        }
+
+        .logo-star {
+            font-size: 1rem;
+            margin-top: -4px;
+        }
+
+        .nav-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+            color: #ccd6f6;
+            min-height: calc(100vh - 200px);
+        }
+
+        h1 {
+            color: #64ffda;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #172a45;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .contact-text {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-email {
+            color: #64ffda;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            background: #172a45;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #64ffda;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #8892b0;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-content {
+                padding: 2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">
+                <span class="logo-text">space waves</span>
+                <span class="logo-star">✧</span>
+            </a>
+            <div class="nav-links">
+                <a href="/#game">Play</a>
+                <a href="/#about">About</a>
+                <a href="/#how-to-play">How to Play</a>
+                <a href="/#faq">FAQ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section container">
+            <div class="contact-content">
+                <h1>Contact Us</h1>
+                <p class="contact-text">Need assistance? We're available to help!</p>
+                <p class="contact-text">In case you have any inquiries, comments, or proposals on how we can improve our platform, don't hesitate to contact us. You can drop us a line at:</p>
+                <p class="contact-email">support@spacewaves.pro</p>
+                <p class="contact-text">We'll make every effort to reply promptly.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/contact">Contact Us</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Space Waves. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

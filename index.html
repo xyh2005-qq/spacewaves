@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Waves - An Arcade Avoid Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a192f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #172a45;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #64ffda;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo-text {
+            letter-spacing: 1px;
+        }
+
+        .logo-star {
+            font-size: 1rem;
+            margin-top: -4px;
+        }
+
+        .nav-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        section {
+            padding: 4rem 0;
+            color: #ccd6f6;
+        }
+
+        h1, h2 {
+            color: #64ffda;
+            margin-bottom: 1.5rem;
+        }
+
+        .game-container {
+            width: 100%;
+            height: 600px;
+            background: #172a45;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #172a45;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .faq-item {
+            background: #172a45;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item h3 {
+            color: #64ffda;
+            margin-bottom: 0.5rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .screenshot-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #172a45;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .screenshot-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 宽高比 */
+            background: #172a45;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer {
+            background: #172a45;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #ccd6f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #64ffda;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #8892b0;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">
+                <span class="logo-text">space waves</span>
+                <span class="logo-star">✧</span>
+            </a>
+            <div class="nav-links">
+                <a href="#game">Play</a>
+                <a href="#about">About</a>
+                <a href="#how-to-play">How to Play</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="game" class="container">
+            <h1>Play Space Waves</h1>
+            <div class="game-container">
+                <iframe src="https://www.crazygames.com/game/space-waves" frameborder="0"></iframe>
+            </div>
+        </section>
+
+        <section id="screenshots" class="container">
+            <h2>Game Preview</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/0L885f9nUI8" 
+                    title="Space Waves Gameplay Video"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+            <h2>About Space Waves</h2>
+            <p>Space Waves is an exciting arcade game where you control an arrow through 33 challenging levels. Navigate through obstacles, avoid walls, rotating cogs, and thorns to reach the end of each level. With varying difficulty levels, you can choose your own adventure!</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>33 Unique Levels</h3>
+                    <p>Each level offers different challenges and difficulty ratings</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multiple Platforms</h3>
+                    <p>Play on desktop or mobile devices through your browser</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Free to Play</h3>
+                    <p>No downloads required - play instantly in your browser</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-play" class="container">
+            <h2>How to Play</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Desktop Controls</h3>
+                    <p>- Hold left mouse button to go up<br>
+                       - Release to go down<br>
+                       - Press P to pause</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Mobile Controls</h3>
+                    <p>- Hold screen to go up<br>
+                       - Release to go down</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pro Tips</h3>
+                    <p>Move in zigzag patterns when facing obstacles to maintain momentum and control</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What browsers support Space Waves?</h3>
+                <p>Space Waves works on all modern browsers including Chrome, Firefox, Safari, and Edge.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I play on mobile devices?</h3>
+                <p>Yes! Space Waves is fully optimized for both desktop and mobile play.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to create an account to play?</h3>
+                <p>No account needed! Just visit the website and start playing immediately.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is the game free to play?</h3>
+                <p>Yes, Space Waves is completely free to play in your web browser.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/contact">Contact Us</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 Space Waves. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
